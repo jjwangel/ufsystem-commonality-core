@@ -26,7 +26,6 @@ public class OptionController {
      */
     @GetMapping("/option/{id}")
     public SysOption findById(@PathVariable Integer id) {
-        log.info("id is:{}", id);
         return this.optionService.findById(id);
     }
 }
