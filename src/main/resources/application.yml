@@ -1,0 +1,30 @@
+# 公共参数
+# 端口配置
+server:
+  port: 8080
+
+# actuator 配置
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+---
+# 开发环境参数
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/asd
+    hikari:
+      username: root
+      password: Passw0rd
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+---
+# 生产环境参数
+spring:
+  profiles: prod
